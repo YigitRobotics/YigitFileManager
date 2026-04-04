@@ -10,7 +10,7 @@
 void print_banner();
 void get_banner();
 void print_file_content(char *content);
-void read_file(FILE *file);
+void read_file(char *file_name);
 void print_banner(FILE *banner_file);
 void get_banner();
 
