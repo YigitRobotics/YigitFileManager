@@ -16,7 +16,7 @@ void print_banner(FILE *banner_file) {
 
 void get_banner() {
     FILE *banner_file;
-    banner_file = fopen("<enter_file>", "r");
+    banner_file = fopen("/Users/yigit/Documents/YigitConfigs/yigitfilemanager/yigitFileReader/banner.txt", "r");
 
     if (!banner_file) {
         fprintf(stderr, "Banner file error!");

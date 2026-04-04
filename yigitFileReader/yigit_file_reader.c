@@ -43,18 +43,30 @@ void read_file(char* file_name) {
 }
 
 int main(int argc, char *argv[]) {
-    char *file_name;
-    int options;
+    char *file_name = NULL;
+    int opt;
 
-    while ((options = getopt(argc, argv, "hf:")) != -1) { // h: help, f: argüman alır, dosya ismi.
-        switch (options) {
+    while ((opt = getopt(argc, argv, "hf:")) != -1) {
+        switch (opt) {
             case 'h':
-                get_banner();
-                break;
+                get_banner(); 
+                return 0;
             case 'f':
-                read_file(optarg);
+                file_name = optarg; 
+                break;
+            default:
+                fprintf(stderr, "Usage: %s [-f filename] [-h]\n", argv[0]);
+                return 1;
         }
     }
+    if (file_name == NULL && optind < argc) {
+        file_name = argv[optind];
+    }
+    if (file_name == NULL) {
+        fprintf(stderr, "Error: No file specified.\n");
+        return 1;
+    }
 
+    read_file(file_name);
     return 0;
 }
