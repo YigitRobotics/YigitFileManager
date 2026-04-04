@@ -16,7 +16,7 @@ void print_banner(FILE *banner_file) {
 
 void get_banner() {
     FILE *banner_file;
-    banner_file = fopen("banner.txt", "r");
+    banner_file = fopen("<enter_file>", "r");
 
     if (!banner_file) {
         fprintf(stderr, "Banner file error!");
