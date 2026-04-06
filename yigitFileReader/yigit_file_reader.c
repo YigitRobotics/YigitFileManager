@@ -2,7 +2,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include <getopt.h> // For options, Windows is not supported. Only POSIX !
-#include "../configs.h" // YigitFileManager Configs
+#include "configs.h" // YigitFileManager Configs
 
 char* return_message(char *text) {
     return text;
